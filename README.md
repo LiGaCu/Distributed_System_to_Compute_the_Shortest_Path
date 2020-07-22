@@ -3,11 +3,12 @@
 ## Author
 
 Full name: Jiatong Li
-USC ID: 1046533527
 
 ## Work description
 
 In this project, I build a distributed system to calculate the shortest path and its length between two vertexes that the user gives.
+
+![image]("https://github.com/LiGaCu/Distributed_System_to_Compute_the_Shortest_Path/System Architecture.JPG")
 
 The user uses *client* to type in requested information (map id, source vertex, destination vertex, filesize), and *client* sends it to *aws*. Then *aws* gives the requested information to serverA and serverB, who will search the map and vertex information in their separated data files. After serverA and serverB finish searching and give back map information or no found massage to aws, aws forward the map information and requested information to serverC or no found massage to client. After serverC receives the map information and requested information, it uses Dijkstra Algorithm to find the shortest path and calculates delays. Then serverC sends the results to aws, who will then forward them to client. 
 
